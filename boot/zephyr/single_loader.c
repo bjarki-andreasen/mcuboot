@@ -122,7 +122,7 @@ boot_go(struct boot_rsp *rsp)
 #ifdef MCUBOOT_RAM_LOAD
         static struct boot_loader_state state;
         state.imgs[0][0].hdr = _hdr;
-
+        state.imgs[0][0].area = _fa_p;
         rc = boot_load_image_to_sram(&state);
         if (rc != 0)
             goto out;
